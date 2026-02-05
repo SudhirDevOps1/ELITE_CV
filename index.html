@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProResume Elite | Sudhir Kumar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Roboto+Mono:wght@400;700&family=Open+Sans:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+      :root {
+        --bg-editor: #020617;
+        --bg-panel: #0f172a;
+        --accent: #3b82f6;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-editor);
+        color: #f1f5f9;
+        overflow: hidden;
+      }
+
+      /* Scrollbar Styling */
+      ::-webkit-scrollbar { width: 4px; height: 4px; }
+      ::-webkit-scrollbar-track { background: #020617; }
+      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+      ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+      /* Rigid A4 Page Simulation */
+      .a4-page {
+        width: 210mm;
+        min-height: 297mm; /* Changed from height to min-height for multi-page */
+        background: white;
+        color: black;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        margin: 0 auto;
+        position: relative;
+        box-sizing: border-box;
+      }
+
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+
+      /* Print Specific Overrides */
+      @media print {
+        .no-print { display: none !important; }
+        body, html { background: white !important; margin: 0; padding: 0; overflow: visible !important; }
+        .a4-page {
+          width: 210mm;
+          min-height: 297mm;
+          box-shadow: none !important;
+          margin: 0 !important;
+          transform: none !important;
+          page-break-after: always;
+        }
+      }
+
+      /* Prevent ugly section breaks during PDF generation */
+      .avoid-break {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4"
+      }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

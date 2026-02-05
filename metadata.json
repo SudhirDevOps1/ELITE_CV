@@ -1,0 +1,7 @@
+{
+  "name": "ProResume Elite",
+  "description": "Professional-grade, A4 precision resume builder with AI assistance and high-fidelity PDF exports.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
